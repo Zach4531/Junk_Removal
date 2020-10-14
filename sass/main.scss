@@ -1,0 +1,342 @@
+// $primary-color: #0f4c86;
+$primary-color: #277bb7;
+$bg-color: #273039;
+
+$tablet: 968px;
+$mobile: 600px;
+
+$thumb_w: 290px;
+$thumb_h: 270px;
+
+/*Global */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu, Helvetica;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  @media (max-width: $tablet) {
+    top: 75px;
+  }
+}
+main {
+  margin-left: 250px;
+  min-height: 100%;
+  margin-bottom: -100px;
+  @media (max-width: $tablet) {
+    margin-left: 0px;
+  }
+}
+section {
+  padding: 15px 0px;
+}
+footer {
+  width: 100%;
+  height: 100px;
+  margin-top: 100px;
+  background-color: $bg-color;
+  bottom: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -100px;
+}
+
+.section-heading {
+  text-align: center;
+  padding: 40px;
+  font-size: 22px;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+
+  @media (max-width: $tablet) {
+    width: 90%;
+  }
+}
+a.btn {
+  text-decoration: none;
+}
+
+.btn {
+  box-shadow: none;
+  border: none;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  font-size: 0.9em;
+  padding: 12px 17px;
+  background: none;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: $primary-color;
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+}
+
+.btn-secondary {
+  border: 2px solid $primary-color;
+  background-color: $primary-color;
+
+  &:hover {
+    background: none;
+    border: 2px solid #fff;
+  }
+}
+
+.btn-light {
+  border: 2px solid #fff;
+  background: none;
+
+  &:hover {
+    background-color: #fff;
+    color: $primary-color !important;
+  }
+}
+
+/*Nav Styles */
+
+.logo {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  @media (max-width: $tablet) {
+    width: 150px;
+    margin: initial;
+  }
+}
+
+#nav-toggle:checked ~ ul {
+  height: 225px;
+}
+
+#nav-toggle:checked + label i {
+  color: $primary-color;
+}
+
+nav label {
+  display: none;
+  @media (max-width: $tablet) {
+    display: block;
+  }
+}
+
+nav label i {
+  color: #fff;
+  font-size: 2rem;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+nav input {
+  display: none;
+}
+
+nav {
+  background-color: $bg-color;
+  width: 250px;
+  padding: 20px;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  z-index: 2;
+  @media (max-width: $tablet) {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+nav ul {
+  margin-top: 30px;
+  @media (max-width: $tablet) {
+    display: block;
+    position: fixed;
+    top: 45px;
+    left: 0px;
+    overflow: hidden;
+    width: 100%;
+    background-color: $bg-color;
+    height: 0px;
+    transition: height 0.2s ease;
+  }
+  li {
+    list-style: none;
+  }
+}
+
+nav a {
+  text-decoration: none;
+  color: #ccc;
+  padding: 15px;
+  font-size: 1.2rem;
+  display: block;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+/*Top Header Image */
+header {
+  background: url("../img/junk-removal2.jpg") center center;
+  background-size: cover;
+  min-height: 500px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.header-content {
+  color: #fff;
+  background-color: rgba($bg-color, 0.9);
+  padding: 25px;
+  height: 100%;
+  width: 100%;
+  h1 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  h1,
+  p {
+    margin-bottom: 10px;
+  }
+  .header-btns {
+    margin-top: 30px;
+  }
+}
+
+#services {
+  display: flex;
+  justify-content: space-between;
+}
+.service {
+  width: 300px;
+  height: 200px;
+  background-color: #aaa;
+}
+
+form {
+  width: 600px;
+  // border-radius: 2px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
+  button {
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+  }
+  textarea {
+    height: 100px;
+  }
+}
+
+.form-input {
+  display: block;
+  margin-bottom: 5px;
+  position: relative;
+  label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  input,
+  textarea {
+    padding: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #eee;
+    &:focus {
+      border: 1px solid $primary-color;
+      background-color: #fff;
+    }
+  }
+}
+
+.contact-items {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin: 0 auto;
+  @media (max-width: $tablet) {
+    justify-content: space-around;
+    width: 100%;
+  }
+  @media (max-width: $mobile) {
+    flex-direction: column;
+  }
+}
+
+.contact-item > * {
+  display: inline-block;
+  vertical-align: middle;
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}
+
+.contact-item {
+  margin-bottom: 20px;
+  @media (max-width: $tablet) {
+    margin-right: 0px;
+  }
+  @media (max-width: $mobile) {
+    text-align: center;
+  }
+  p {
+    padding: 5px 0px;
+  }
+  p:first-of-type {
+    font-weight: bold;
+  }
+}
+
+.contact-item i,
+.social-icon i {
+  width: 55px;
+  height: 55px;
+  background-color: $primary-color;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+  border-radius: 50%;
+  margin-right: 10px;
+  @media (max-width: $mobile) {
+    margin-right: 0px;
+  }
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icon {
+  margin: 0px 10px;
+}
