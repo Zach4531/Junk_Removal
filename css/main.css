@@ -126,7 +126,7 @@ a.btn {
 }
 
 #nav-toggle:checked ~ ul {
-  height: 225px;
+  height: 100vh;
 }
 
 #nav-toggle:checked + label i {
@@ -159,7 +159,7 @@ nav input {
 nav {
   background-color: #273039;
   width: 250px;
-  padding: 20px;
+  padding: 20px 0px;
   height: 100%;
   position: fixed;
   overflow: hidden;
@@ -171,6 +171,7 @@ nav {
   nav {
     width: 100%;
     text-align: center;
+    padding: 20px;
     height: auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -184,17 +185,17 @@ nav {
   }
 }
 
-nav ul {
+nav .main-content {
   margin-top: 30px;
 }
 
 @media (max-width: 968px) {
-  nav ul {
+  nav .main-content {
     display: block;
     position: fixed;
     top: 45px;
     left: 0px;
-    overflow: hidden;
+    overflow-x: hidden;
     width: 100%;
     background-color: #273039;
     height: 0px;
@@ -203,15 +204,37 @@ nav ul {
   }
 }
 
-nav ul li {
+nav .main-content li {
   list-style: none;
+}
+
+nav .sub-content {
+  background-color: #12171b;
+  height: 0px;
+  -webkit-transition: height 0.5s ease;
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+
+nav .sub-content li {
+  margin-left: 15px;
+}
+
+@media (max-width: 968px) {
+  nav .sub-content li {
+    margin-left: 0px;
+  }
+}
+
+.sub-toggle:hover > .sub-content {
+  height: 375px;
 }
 
 nav a {
   text-decoration: none;
   color: #ccc;
   padding: 15px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: block;
 }
 
