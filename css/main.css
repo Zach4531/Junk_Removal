@@ -21,7 +21,7 @@ body {
 }
 
 main {
-  margin-left: 250px;
+  margin-left: 200px;
   min-height: 100%;
   margin-bottom: -100px;
 }
@@ -133,6 +133,10 @@ a.btn {
   color: #277bb7;
 }
 
+.sub-toggle {
+  position: relative;
+}
+
 nav label {
   display: none;
 }
@@ -158,11 +162,10 @@ nav input {
 
 nav {
   background-color: #273039;
-  width: 250px;
+  width: 200px;
   padding: 20px 0px;
   height: 100%;
   position: fixed;
-  overflow: hidden;
   top: 0;
   z-index: 2;
 }
@@ -185,12 +188,12 @@ nav {
   }
 }
 
-nav .main-content {
+nav .main-nav {
   margin-top: 30px;
 }
 
 @media (max-width: 968px) {
-  nav .main-content {
+  nav .main-nav {
     display: block;
     position: fixed;
     top: 45px;
@@ -204,42 +207,51 @@ nav .main-content {
   }
 }
 
-nav .main-content li {
+.nav-item {
   list-style: none;
+  padding: 15px;
+  font-size: 1rem;
+  display: block;
+  -webkit-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-nav .sub-content {
-  background-color: #12171b;
-  height: 0px;
+.nav-item:hover {
+  background-color: #232b33;
+}
+
+.nav-item:hover > a {
+  color: #277bb7;
+}
+
+.nav-link {
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+  text-decoration: none;
+  color: #ccc;
+}
+
+nav .sub-nav {
+  background-color: #232b33;
+  position: absolute;
+  right: -150px;
+  top: 0;
+  display: none;
   -webkit-transition: height 0.5s ease;
   transition: height 0.5s ease;
   overflow: hidden;
 }
 
-nav .sub-content li {
-  margin-left: 15px;
-}
-
 @media (max-width: 968px) {
-  nav .sub-content li {
-    margin-left: 0px;
+  nav .sub-nav {
+    right: 0;
+    top: 10px;
+    position: relative;
   }
 }
 
-.sub-toggle:hover > .sub-content {
-  height: 375px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #ccc;
-  padding: 15px;
-  font-size: 1rem;
+.sub-toggle:hover > .sub-nav {
   display: block;
-}
-
-nav a:hover {
-  color: #277bb7;
 }
 
 /*Top Header Image */

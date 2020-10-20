@@ -29,7 +29,7 @@ body {
   }
 }
 main {
-  margin-left: 250px;
+  margin-left: 200px;
   min-height: 100%;
   margin-bottom: -100px;
   @media (max-width: $tablet) {
@@ -128,6 +128,10 @@ a.btn {
   color: $primary-color;
 }
 
+.sub-toggle {
+  position: relative;
+}
+
 nav label {
   display: none;
   @media (max-width: $tablet) {
@@ -149,11 +153,11 @@ nav input {
 
 nav {
   background-color: $bg-color;
-  width: 250px;
+  width: 200px;
   padding: 20px 0px;
   height: 100%;
   position: fixed;
-  overflow: hidden;
+  // overflow: hidden;
   top: 0;
   z-index: 2;
   @media (max-width: $tablet) {
@@ -167,7 +171,7 @@ nav {
   }
 }
 
-nav .main-content {
+nav .main-nav {
   margin-top: 30px;
   @media (max-width: $tablet) {
     display: block;
@@ -180,37 +184,45 @@ nav .main-content {
     height: 0px;
     transition: height 0.2s ease;
   }
-  li {
-    list-style: none;
-  }
 }
 
-nav .sub-content {
-  background-color: darken($bg-color, 10%);
-  height: 0px;
-  transition: height 0.5s ease;
-  overflow: hidden;
-  li {
-    margin-left: 15px;
-    @media (max-width: $tablet) {
-      margin-left: 0px;
+.nav-item {
+  list-style: none;
+  padding: 15px;
+  font-size: 1rem;
+  display: block;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: darken($bg-color, 2%);
+    > a {
+      color: $primary-color;
     }
   }
 }
 
-.sub-toggle:hover > .sub-content {
-  height: 375px;
-}
-
-nav a {
+.nav-link {
+  transition: color 0.2s ease;
   text-decoration: none;
   color: #ccc;
-  padding: 15px;
-  font-size: 1rem;
-  display: block;
-  &:hover {
-    color: $primary-color;
+}
+
+nav .sub-nav {
+  background-color: darken($bg-color, 2%);
+  position: absolute;
+  right: -150px;
+  top: 0;
+  display: none;
+  transition: height 0.5s ease;
+  overflow: hidden;
+  @media (max-width: $tablet) {
+    right: 0;
+    top: 10px;
+    position: relative;
   }
+}
+
+.sub-toggle:hover > .sub-nav {
+  display: block;
 }
 
 /*Top Header Image */
