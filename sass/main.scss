@@ -24,6 +24,8 @@ body {
 }
 
 body {
+  max-width: 2040px;
+  margin: 0 auto;
   @media (max-width: $tablet) {
     top: 75px;
   }
@@ -54,8 +56,8 @@ footer {
 
 .section-heading {
   text-align: center;
-  padding: 40px;
-  font-size: 22px;
+  padding: 10px 0px 25px 0px;
+  font-size: 1.4rem;
 }
 
 .container {
@@ -72,6 +74,7 @@ a.btn {
 
 .btn {
   box-shadow: none;
+  text-align: center;
   border: none;
   border-radius: 2px;
   transition: all 0.2s ease;
@@ -259,15 +262,38 @@ header {
 #services {
   display: flex;
   justify-content: space-between;
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
 }
 .service {
-  width: 300px;
-  height: 200px;
-  background-color: #aaa;
+  text-align: center;
+  padding: 20px;
+  margin: 15px;
+  h2 {
+    font-size: 1.2rem;
+  }
+  a {
+    display: inline-block;
+  }
+  p {
+    margin: 15px 0px;
+    font-size: 1.1rem;
+  }
+  i {
+    font-size: 1.3rem;
+    background-color: $primary-color;
+    color: #fff;
+    padding: 25px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
 }
 
 form {
-  width: 600px;
+  // width: 600px;
+  width: 90%;
+  max-width: 500px;
   // border-radius: 2px;
   margin: 0 auto;
   position: relative;
@@ -294,7 +320,7 @@ form {
     display: block;
     font-size: 0.9rem;
     margin-bottom: 5px;
-    color: #333;
+    color: #fff;
   }
   input,
   textarea {
@@ -369,4 +395,68 @@ form {
 
 .social-icon {
   margin: 0px 10px;
+}
+
+.section-split {
+  display: flex;
+  color: #fff;
+  padding: 0px;
+  align-items: stretch;
+  width: 100%;
+  @media (max-width: $tablet) {
+    flex-direction: column;
+  }
+}
+.section-a {
+  width: 100%;
+  text-align: center;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 35px;
+  p {
+    width: 65%;
+    display: inline-block;
+  }
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 35px;
+  width: 50%;
+  @media (max-width: $tablet) {
+    width: 100%;
+  }
+}
+.left {
+  background: #ddd;
+}
+.right {
+  background: $bg-color;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.gallery-item {
+  width: 25%;
+  height: 200px;
+  margin: 5px;
+  @media (max-width: $tablet) {
+    width: 50%;
+  }
+}
+.gallery-item.odd {
+  background-color: $primary-color;
+}
+.gallery-item.even {
+  background-color: $bg-color;
+}
+
+.section-d {
+  width: 100%;
 }
