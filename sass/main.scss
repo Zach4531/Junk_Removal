@@ -21,6 +21,7 @@ html,
 body {
   height: 100%;
   position: relative;
+  background: $bg-color;
 }
 
 body {
@@ -43,9 +44,10 @@ section {
 }
 footer {
   width: 100%;
-  height: 100px;
+  height: 200px;
   margin-top: 100px;
-  background-color: $bg-color;
+  background-color: lighten($bg-color, 10%);
+  position: relative;
   bottom: 0;
 }
 
@@ -160,7 +162,6 @@ nav {
   padding: 20px 0px;
   height: 100%;
   position: fixed;
-  // overflow: hidden;
   top: 0;
   z-index: 2;
   @media (max-width: $tablet) {
@@ -181,12 +182,16 @@ nav .main-nav {
     position: fixed;
     top: 45px;
     left: 0px;
-    overflow-x: hidden;
     width: 100%;
     background-color: $bg-color;
     height: 0px;
     transition: height 0.2s ease;
   }
+}
+
+nav,
+nav .main-nav {
+  overflow: auto;
 }
 
 .nav-item {
@@ -211,12 +216,11 @@ nav .main-nav {
 
 nav .sub-nav {
   background-color: darken($bg-color, 2%);
-  position: absolute;
-  right: -150px;
-  top: 0;
+  position: relative;
+  top: 15px;
+  height: 100%;
   display: none;
   transition: height 0.5s ease;
-  overflow: hidden;
   @media (max-width: $tablet) {
     right: 0;
     top: 10px;
@@ -334,6 +338,17 @@ form {
       background-color: #fff;
     }
   }
+}
+
+form span {
+  display: none;
+}
+
+.error span {
+  display: block;
+  color: red !important;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 .contact-items {
@@ -459,4 +474,5 @@ form {
 
 .section-d {
   width: 100%;
+  background: #fff;
 }

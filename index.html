@@ -156,24 +156,30 @@
                 </div>
               </div>
             </div> -->
-            <form action="#">
+            <form id="main-form" action="assets/form.php" method="post">
               <div class="form-input">
                 <label for="name">Name</label>
+                <span>Name is required</span>
                 <input type="text" id="name" name="name" />
               </div>
               <div class="form-input">
                 <label for="email">Email</label>
+                <span>Email is required</span>
                 <input type="email" id="email" name="email" />
               </div>
               <div class="form-input">
                 <label for="phone">Phone</label>
+                <span>Phone is required</span>
                 <input type="tel" id="phone" name="phone" />
               </div>
               <div class="form-input">
                 <label for="reason">Reason</label>
+                <span>Reason is required</span>
                 <textarea type="reason" id="reason" name="reason"></textarea>
               </div>
-              <button class="btn btn-primary" type="submit">Submit</button>
+              <button id="form-submit" class="btn btn-primary" type="submit">
+                Submit
+              </button>
             </form>
           </div>
         </section>

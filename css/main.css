@@ -12,6 +12,7 @@ html,
 body {
   height: 100%;
   position: relative;
+  background: #273039;
 }
 
 body {
@@ -43,9 +44,10 @@ section {
 
 footer {
   width: 100%;
-  height: 100px;
+  height: 200px;
   margin-top: 100px;
-  background-color: #273039;
+  background-color: #3c4a57;
+  position: relative;
   bottom: 0;
 }
 
@@ -204,13 +206,17 @@ nav .main-nav {
     position: fixed;
     top: 45px;
     left: 0px;
-    overflow-x: hidden;
     width: 100%;
     background-color: #273039;
     height: 0px;
     -webkit-transition: height 0.2s ease;
     transition: height 0.2s ease;
   }
+}
+
+nav,
+nav .main-nav {
+  overflow: auto;
 }
 
 .nav-item {
@@ -239,13 +245,12 @@ nav .main-nav {
 
 nav .sub-nav {
   background-color: #232b33;
-  position: absolute;
-  right: -150px;
-  top: 0;
+  position: relative;
+  top: 15px;
+  height: 100%;
   display: none;
   -webkit-transition: height 0.5s ease;
   transition: height 0.5s ease;
-  overflow: hidden;
 }
 
 @media (max-width: 968px) {
@@ -397,6 +402,17 @@ form textarea {
 .form-input textarea:focus {
   border: 1px solid #277bb7;
   background-color: #fff;
+}
+
+form span {
+  display: none;
+}
+
+.error span {
+  display: block;
+  color: red !important;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
 .contact-items {
@@ -587,5 +603,6 @@ form textarea {
 
 .section-d {
   width: 100%;
+  background: #fff;
 }
 /*# sourceMappingURL=main.css.map */
